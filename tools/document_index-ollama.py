@@ -3,7 +3,7 @@ import json
 from elasticsearch import Elasticsearch
 
 # Elasticsearch setup
-es = Elasticsearch(["http://localhost:9200"])
+es = Elasticsearch(["http://192.168.7.10:9200"])
 
 # Ollama API setup
 OLLAMA_API_URL = "http://localhost:11434/api/embeddings"
@@ -42,15 +42,18 @@ def create_index():
                 "issue": {"type": "text"},
                 "solution": {"type": "text"},
                 "category": {"type": "keyword"},
-                "embedding": {"type": "dense_vector", "dims": 768},  # Ensure dims match embedding size
-                "custom_fields": {"type": "object"},  # Allows dynamic fields for custom attributes
+                # Ensure dims match embedding size
+                "embedding": {"type": "dense_vector", "dims": 768},
+                # Allows dynamic fields for custom attributes
+                "custom_fields": {"type": "object"},
             }
         }
     }
     # Delete index if it exists (for development purposes; avoid in production)
     es.indices.delete(index="issues_n_solutions", ignore=[400, 404])
     # Create the index with the specified mapping
-    es.indices.create(index="issues_n_solutions", body=index_mapping, ignore=400)
+    es.indices.create(index="issues_n_solutions",
+                      body=index_mapping, ignore=400)
 
 
 def index_documents(data):
@@ -85,7 +88,8 @@ def index_documents(data):
         }
 
         try:
-            es.index(index="issues_n_solutions", id=document_id, document=document)
+            es.index(index="issues_n_solutions",
+                     id=document_id, document=document)
             print(f"Document {document_id} indexed successfully.")
         except Exception as e:
             print(f"Failed to index document {document_id}: {e}")
