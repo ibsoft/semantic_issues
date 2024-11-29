@@ -20,7 +20,7 @@ RUN pip install gunicorn
 
 
 # Install Python dependencies
-RUN pip install --no-cache-dir -r requirements-windows.txt
+RUN pip install --no-cache-dir -r requirements.txt
 
 # Expose the port for the Flask app
 EXPOSE 5000

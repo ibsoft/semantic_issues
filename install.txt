@@ -68,5 +68,9 @@ Install REDIS
 docker run --name redis -p 6379:6379 -d redis
 
 
-docker run -p 8008:8008 -e OPENAI_API_KEY="your_key_here" semantic_api
+# Install Semantic API docker container
+
+docker build --no-cache -t semantic_api .
+
+docker run -p 8008:8008  --network=host -e OPENAI_API_KEY="your_key_here" semantic_api
 
