@@ -6,11 +6,9 @@ docker run --name es01 --net elastic -p 9200:9200 -p 9300:9300 \
   -m 1GB -it docker.elastic.co/elasticsearch/elasticsearch:8.16.1
 
 
-
 Install ElasticVue
 
 docker run -p 8080:8080 --name elasticvue            -d cars10/elasticvue
-
 
 
 elasticsearch.yml
@@ -70,7 +68,12 @@ docker run --name redis -p 6379:6379 -d redis
 
 # Install Semantic API docker container
 
-docker build --no-cache -t semantic_api .
+docker build --no-cache --network=host -t semantic_api .
 
 docker run -p 8008:8008  --network=host -e OPENAI_API_KEY="your_key_here" semantic_api
+
+
+# Backup elasticsearch index 
+
+curl -X GET "http://localhost:5000/api/v1/backup-index?index=issues_n_solutions" -o issues_n_solutions.zip -H "Authorization: Bearer yout_token_here"
 

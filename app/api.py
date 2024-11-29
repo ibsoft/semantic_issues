@@ -1,6 +1,7 @@
 from collections import OrderedDict
 import json
 import logging
+import os
 import time
 from elasticsearch import Elasticsearch
 from flask import Blueprint, Response, request, jsonify
@@ -12,6 +13,12 @@ from . import redis_client
 from datetime import timedelta
 from .config import Config
 import hashlib
+import zipfile
+from datetime import datetime
+from flask import send_file
+from elasticsearch import helpers
+
+
 
 logger = logging.getLogger()
 
@@ -228,3 +235,51 @@ def store_memory():
     except Exception as e:
         logging.error(f"Error indexing document: {str(e)}")
         return jsonify({"msg": f"Error storing document: {str(e)}"}), 500
+    
+
+@api_bp.route('/backup-index', methods=['GET'])
+@jwt_required()
+def backup_index():
+    """
+    Backup Elasticsearch index and provide a downloadable ZIP file.
+    """
+    logging.info("Memory endpoint accessed")
+    index_name = request.args.get("index", "default_index")  # Optional query param
+    timestamp = datetime.now().strftime('%Y%m%d_%H%M%S')
+    
+    # Define temporary directories and file names
+    tmp_dir = "/tmp"
+    backup_filename = f"backup_{index_name}_{timestamp}.json"
+    zip_filename = f"{backup_filename}.zip"
+    
+    # Paths for the temporary backup and zip files
+    backup_file_path = os.path.join(tmp_dir, backup_filename)
+    zip_file_path = os.path.join(tmp_dir, zip_filename)
+
+    try:
+        # Query Elasticsearch for the index data
+        query = {"query": {"match_all": {}}}
+        results = helpers.scan(es, index=index_name, query=query)
+
+        # Save the results to a JSON file in the tmp folder
+        with open(backup_file_path, "w") as backup_file:
+            for doc in results:
+                backup_file.write(json.dumps(doc) + "\n")
+
+        # Create a ZIP file for the JSON backup in the tmp folder
+        with zipfile.ZipFile(zip_file_path, "w", zipfile.ZIP_DEFLATED) as zipf:
+            zipf.write(backup_file_path, arcname=backup_filename)
+
+        # Serve the ZIP file as a downloadable response
+        return send_file(zip_file_path, as_attachment=True, download_name=zip_filename)
+
+    except Exception as e:
+        logging.error(f"Error backing up index '{index_name}': {str(e)}")
+        return jsonify({"msg": f"Error backing up index: {str(e)}"}), 500
+
+    finally:
+        # Clean up the temporary files after sending the response
+        if os.path.exists(backup_file_path):
+            os.remove(backup_file_path)
+        if os.path.exists(zip_file_path):
+            os.remove(zip_file_path)
