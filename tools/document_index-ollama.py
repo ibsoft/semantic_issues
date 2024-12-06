@@ -3,7 +3,7 @@ import json
 from elasticsearch import Elasticsearch
 
 # Elasticsearch setup
-es = Elasticsearch(["http://192.168.7.10:9200"])
+es = Elasticsearch(["http://localhost:9200"])
 
 # Ollama API setup
 OLLAMA_API_URL = "http://localhost:11434/api/embeddings"
@@ -50,9 +50,9 @@ def create_index():
         }
     }
     # Delete index if it exists (for development purposes; avoid in production)
-    es.indices.delete(index="issues_n_solutions", ignore=[400, 404])
+    es.indices.delete(index="issues_index", ignore=[400, 404])
     # Create the index with the specified mapping
-    es.indices.create(index="issues_n_solutions",
+    es.indices.create(index="issues_index",
                       body=index_mapping, ignore=400)
 
 
@@ -88,7 +88,7 @@ def index_documents(data):
         }
 
         try:
-            es.index(index="issues_n_solutions",
+            es.index(index="issues_index",
                      id=document_id, document=document)
             print(f"Document {document_id} indexed successfully.")
         except Exception as e:
@@ -98,13 +98,13 @@ def index_documents(data):
 if __name__ == "__main__":
     # Load dataset from JSON file
     try:
-        with open("issues_n_solutions.json", "r", encoding="utf-8") as f:
+        with open("issues_index.json", "r", encoding="utf-8") as f:
             dataset = json.load(f)
     except FileNotFoundError:
-        print("The file 'issues_n_solutions.json' was not found.")
+        print("The file 'issues_index.json' was not found.")
         exit(1)
     except json.JSONDecodeError:
-        print("Error decoding JSON from 'issues_n_solutions.json'.")
+        print("Error decoding JSON from 'issues_index.json'.")
         exit(1)
 
     # Create Elasticsearch index and index documents

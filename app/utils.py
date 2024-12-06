@@ -119,17 +119,19 @@ def find_solution(query, documents):
 
     # Create a prompt for OpenAI's model to find a solution for the user query
     prompt = f"""
-    The user has described an issue or problem. Based on the context below, help find the best solution from the existing documents:
-    
-    Use the context below as examples to help identify a solution to the user's query:
-    {json.dumps(context, ensure_ascii=False)}
+        The user has described an issue or problem. Based on the context below, help rephrase the best solution in your own words, derived from the existing documents:
+        
+        Use the context below as examples to help identify a solution to the user's query:
+        {json.dumps(context, ensure_ascii=False)}
 
-    User Query: {query}
+        User Query: {query}
 
-    Respond with:
-    **Solution**: [Provide the best possible solution based on the context] else respond with "No feasible solution found".
-    
+        Respond with:
+        **Solution**: [Provide a restated solution in your own words, based on the context provided. If no solution can be found, respond with "No feasible solution found"].
+        
+        Avoid directly copying the solution. Summarize and provide an understandable answer.
     """
+
 
     try:
         # Assuming `Config.MODEL` contains the correct OpenAI model name

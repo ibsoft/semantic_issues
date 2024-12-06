@@ -3,7 +3,7 @@
 # Set variables
 APP_NAME="run:app"  # The entry point of your app
 HOST="0.0.0.0"
-PORT="8008"
+PORT="8002"
 WORKERS=4
 PID_FILE="gunicorn.pid"
 

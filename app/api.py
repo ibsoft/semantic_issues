@@ -28,6 +28,7 @@ api_bp = Blueprint('api', __name__)
 
 
 @api_bp.route('/register', methods=['POST'])
+@jwt_required()
 def register_user():
     logging.info("Register endpoint accessed")
     data = request.get_json()
